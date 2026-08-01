@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Silly Boy</title>
+    <meta
+      name="description"
+      content="A handcrafted, heartfelt web experience made to comfort and delight a dear friend."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&family=Pacifico:wght@400&family=Shadows+Into+Light:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="aurora aurora-1" aria-hidden="true"></div>
+    <div class="aurora aurora-2" aria-hidden="true"></div>
+    <div class="glow glow-1" aria-hidden="true"></div>
+    <div class="glow glow-2" aria-hidden="true"></div>
+
+    <div class="screen active" id="loader">
+      <div class="loader-card">
+        <p class="eyebrow">A surprise for My Silly Boy</p>
+        <h1>Opening a little pocket of comfort</h1>
+        <div class="loading-bar" aria-label="Loading experience">
+          <span id="loading-bar-fill"></span>
+        </div>
+        <p id="loading-message">Initializing Friendship.exe...</p>
+      </div>
+    </div>
+
+    <section class="screen" id="intro" aria-labelledby="intro-title">
+      <div class="intro-layout">
+        <div class="tulip-stage">
+          <img
+            class="intro-image"
+            src="https://images.unsplash.com/photo-1626895833517-900f0dcff071?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="A gentle bouquet of flowers in warm light"
+          />
+          <div class="ground-glow"></div>
+        </div>
+        <div class="intro-copy">
+          <p class="eyebrow">A soft gift, crafted with love</p>
+          <h2 id="intro-title">Hey...</h2>
+          <p>I made something just for you.</p>
+          <button class="primary-btn" id="start-journey">🌷 Are you ready?</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="mascot" aria-labelledby="mascot-title">
+      <div class="card-panel">
+        <div class="speech-bubble" id="speech-bubble">
+          You do not have to carry everything alone.
+        </div>
+        <div class="mascot" id="mascot-blob" tabindex="0" aria-label="A glowing and friendly companion">
+          <div class="mascot-ear ear-left"></div>
+          <div class="mascot-ear ear-right"></div>
+          <div class="mascot-face">
+            <span class="eye"></span>
+            <span class="eye"></span>
+            <span class="nose"></span>
+          </div>
+          <div class="mascot-tail"></div>
+        </div>
+        <h3 id="mascot-title">A small companion is here</h3>
+        <p>It blinks, waves, and stays close wherever your heart needs it.</p>
+        <button class="primary-btn next-scene" data-target="letter">Continue</button>
+      </div>
+    </section>
+
+    <section class="screen" id="letter" aria-labelledby="letter-title">
+      <div class="card-panel letter-panel">
+        <button class="envelope" id="open-envelope" aria-label="Open the heartfelt letter">
+          <span class="envelope-flap"></span>
+          <span class="envelope-body"></span>
+          <span class="envelope-seal"></span>
+          <span class="envelope-label">Open it</span>
+        </button>
+        <div class="letter-text" id="letter-content" aria-live="polite">
+          <p id="letter-body"></p>
+        </div>
+        <button class="primary-btn next-scene next-scene-hidden" id="letter-next-btn" data-target="gallery" hidden>Read the memories</button>
+      </div>
+    </section>
+
+    <section class="screen" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Little treasures from our memories</p>
+          <h3 id="gallery-title">Memory Gallery</h3>
+        </div>
+        <div class="gallery-grid">
+          <article class="memory-card" tabindex="0">
+            <div class="memory-face memory-front">
+              <img src="https://plus.unsplash.com/premium_photo-1663099652350-2028e5cc143f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A dreamy sunlit meadow with soft flowers" />
+            </div>
+            <div class="memory-face memory-back">
+              <h4>Sunlit laughter</h4>
+              <p>Some days deserve soft light and even softer company.</p>
+            </div>
+          </article>
+          <article class="memory-card" tabindex="0">
+            <div class="memory-face memory-front">
+              <img src="https://images.unsplash.com/photo-1542301456267-bf7db60bb9cd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A moonlit garden with gentle evening light" />
+            </div>
+            <div class="memory-face memory-back">
+              <h4>Moonlit calm</h4>
+              <p>Quiet nights become kinder when kindness is shared.</p>
+            </div>
+          </article>
+          <article class="memory-card" tabindex="0">
+            <div class="memory-face memory-front">
+              <img src="https://images.unsplash.com/photo-1602606638102-8172db1cf604?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A soft candlelit moment with warm glow" />
+            </div>
+            <div class="memory-face memory-back">
+              <h4>Steady warmth</h4>
+              <p>Even the smallest light can make the dark feel less lonely.</p>
+            </div>
+          </article>
+        </div>
+        <button class="primary-btn next-scene" data-target="keepsakes">See the keepsakes</button>
+      </div>
+    </section>
+
+    <section class="screen" id="keepsakes" aria-labelledby="keepsakes-title">
+      <div class="keepsakes-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">little paper dreams</p>
+          <h3 id="keepsakes-title">A few handmade keepsakes</h3>
+        </div>
+        <div class="note-board">
+          <article class="note-card note-card-large">
+            <span class="note-pin"></span>
+            <h4>For the days that feel heavy</h4>
+            <p>You are allowed to rest, to breathe, and to be held by kindness.</p>
+          </article>
+          <article class="note-card note-card-small">
+            <span class="note-pin"></span>
+            <h4>For your laughter</h4>
+            <p>Even the smallest joke can light up a tired sky.</p>
+          </article>
+          <article class="note-card note-card-medium">
+            <span class="note-pin"></span>
+            <h4>For your heart</h4>
+            <p>It is gentle, brave, and worth keeping close.</p>
+          </article>
+          <article class="note-card note-card-tiny">
+            <span class="note-pin"></span>
+            <p>And I will still be here.</p>
+          </article>
+        </div>
+        <button class="primary-btn next-scene" data-target="gifts">Open the little gifts</button>
+      </div>
+    </section>
+
+    <section class="screen" id="gifts" aria-labelledby="gifts-title">
+      <div class="gift-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">A constellation of small comforts</p>
+          <h3 id="gifts-title">Floating Gifts</h3>
+        </div>
+        <div class="gift-grid">
+          <button class="gift-card" data-title="Virtual Hug" data-copy="A warm, quiet embrace sent across the distance.">🎁</button>
+          <button class="gift-card" data-title="Cookie" data-copy="A tiny comfort for the sweetest moments.">🍪</button>
+          <button class="gift-card" data-title="Teddy Bear" data-copy="A soft reminder that you are never alone.">🧸</button>
+          <button class="gift-card" data-title="Pizza Coupon" data-copy="A promise of comfort food and cozy laughter.">🍕</button>
+          <button class="gift-card" data-title="Friendship Certificate" data-copy="Forever yours, in the gentlest way possible.">🪪</button>
+          <button class="gift-card" data-title="Favorite Song" data-copy="A melody for the days when your heart needs a steady hand.">🎵</button>
+          <button class="gift-card" data-title="Chocolate" data-copy="A little sweetness for your busy heart.">🍫</button>
+          <button class="gift-card" data-title="Funny Joke" data-copy="Even your worries deserve a tiny laugh.">😄</button>
+          <button class="gift-card" data-title="Unlimited Support Pass" data-copy="A reminder that I will stay, softly and steadily.">💖</button>
+        </div>
+        <button class="primary-btn next-scene" data-target="final">Bring it home</button>
+      </div>
+    </section>
+
+    <section class="screen" id="final" aria-labelledby="final-title">
+      <div class="final-card">
+        <p class="eyebrow">The night grows tender</p>
+        <h3 id="final-title">Maybe life feels uncertain...</h3>
+        <p>But one thing is not changing.</p>
+        <p>🌷 You are not losing me.</p>
+        <p>I will still be here.</p>
+        <button class="primary-btn" id="infinite-hug">🤗 Receive Infinite Hug</button>
+      </div>
+    </section>
+
+    <div class="achievement" id="achievement" aria-live="polite"></div>
+    <div class="gift-modal" id="gift-modal" role="dialog" aria-modal="true" aria-label="Gift details">
+      <div class="gift-modal-card">
+        <h4 id="gift-modal-title"></h4>
+        <p id="gift-modal-copy"></p>
+        <button class="primary-btn" id="close-gift-modal">Close</button>
+      </div>
+    </div>
+  </body>
+</html>
